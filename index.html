@@ -8,17 +8,20 @@
 </head>
 
 <body>
-  <div class="alert-box" id="alert">알림창임
-    <button onclick="alertClose()">닫기</button>
+  <div class="alert-box" id="alert">
+    <p class="title">알림창임</p>
+    <!-- <button class="title" onclick="alertOnOff('none')">닫기</button> -->
+    <button id="close">닫기</button>
   </div>
-  <button onclick="alertOpen()">버튼</button>
+  <button onclick="alertOnOff('block')">버튼</button>
   <script>
-    function alertOpen() {
-      document.getElementById('alert').style.display = 'block';
+    function alertOnOff(파라미터) {
+      document.getElementById('alert').style.display = 파라미터;
     }
-    function alertClose() {
-      document.getElementById('alert').style.display = 'none';
-    }
+
+    document.getElementById('close').addEventListener('click', function () {
+      alertOnOff('none')
+    });
   </script>
 </body>
 
